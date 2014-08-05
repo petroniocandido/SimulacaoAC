@@ -1,3 +1,5 @@
+package br.edu.ifnmg.AutomatosCelulares.core;
+
 
 import java.util.List;
 
@@ -11,10 +13,7 @@ import java.util.List;
  *
  * @author petronio
  */
-public interface Camada<E> {
-    public int getLargura();
-    public int getComprimento();
-    public Celula<E> getCelula(int x, int y);
-    public List<Celula<E>> getVizinhos(Celula<E> celula);
-    public void atualiza();
+public interface Celula<E> {
+    public E getEstado();
+    public void atualizarEstado();    
 }
