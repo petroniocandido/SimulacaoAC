@@ -7,13 +7,20 @@
 package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 
 import br.edu.ifnmg.AutomatosCelulares.core.Celula;
+import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
 
 /**
  *
  * @author petronio
  */
-public class CelulaSolo implements Celula<Long> {
+public class CelulaSolo extends CelulaAbstrata<Long> {
 
+    private TipoSolo tipo;
+    
+    private double altura;
+    
+    private double humidadeAtual;
+    
     @Override
     public Long getEstado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

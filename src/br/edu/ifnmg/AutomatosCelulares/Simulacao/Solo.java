@@ -6,35 +6,13 @@
 
 package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 
-import br.edu.ifnmg.AutomatosCelulares.core.Camada;
-import br.edu.ifnmg.AutomatosCelulares.core.Celula;
-import java.util.List;
+import br.edu.ifnmg.AutomatosCelulares.core.CamadaAbstrata;
 
 /**
  *
  * @author petronio
  */
-public class Solo implements Camada<CelulaSolo> {
-
-    @Override
-    public int getLargura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getComprimento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Celula<CelulaSolo> getCelula(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Celula<CelulaSolo>> getVizinhos(Celula<CelulaSolo> celula) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public class Solo extends CamadaAbstrata<CelulaSolo> {
 
     @Override
     public void atualiza() {

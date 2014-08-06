@@ -7,11 +7,19 @@
 package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 
 import br.edu.ifnmg.AutomatosCelulares.core.AutomatoCelular;
+import java.util.Date;
 
 /**
  *
  * @author petronio
  */
 public class Simulacao extends AutomatoCelular {
+    
+    private Date dataInicial;
+    
+    private Date resolucaoTemporal;
+    
+    private int resolucaoEspacial;
+    
     
 }
