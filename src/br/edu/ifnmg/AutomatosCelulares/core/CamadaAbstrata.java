@@ -16,12 +16,19 @@ import java.util.List;
 public abstract class CamadaAbstrata<E> implements Camada<E> {
 
     private int largura, comprimento;
-    private List<Celula<E>> celulas;
+    private Celula<E>[][] celulas;
     
     private Camada camadaSuperior;
     private Camada camadaInferior;
     
     private int z;
+
+    public CamadaAbstrata(int largura, int comprimento) {
+        this.largura = largura;
+        this.comprimento = comprimento;
+        this.celulas = new Celula[largura][comprimento];
+    }
+        
 
     @Override
     public int getLargura() {
@@ -41,13 +48,6 @@ public abstract class CamadaAbstrata<E> implements Camada<E> {
         this.comprimento = comprimento;
     }
 
-    public List<Celula<E>> getCelulas() {
-        return celulas;
-    }
-
-    public void setCelulas(List<Celula<E>> celulas) {
-        this.celulas = celulas;
-    }
 
     @Override
     public Camada getCamadaSuperior() {
@@ -70,25 +70,37 @@ public abstract class CamadaAbstrata<E> implements Camada<E> {
     
     @Override
     public Celula<E> getCelula(int x, int y) {
-        return celulas.get(y * largura + x);
+        return celulas[x][y];
     }
 
     @Override
-    public List<Celula<E>> getVizinhos(Celula<E> celula) {
-        List<Celula<E>> tmp = new ArrayList<>();
-        tmp.add(getCelula(celula.getX()-1, celula.getY()-1));
-        tmp.add(getCelula(celula.getX()-1, celula.getY()-1));
+    public Celula<E>[] getVizinhos(Celula<E> celula) {
+        Celula<E>[] tmp = new Celula[8];
+        int x = celula.getX();
+        int y = celula.getY();
+        tmp[0] = celulas[x-1][y-1];
+        tmp[1] = celulas[x][y-1];
+        tmp[2] = celulas[x+1][y-1];
+        tmp[3] = celulas[x-1][y];
+        tmp[4] = celulas[x+1][y];
+        tmp[5] = celulas[x-1][y+1];
+        tmp[6] = celulas[x][y+1];
+        tmp[7] = celulas[x+1][y+1];
         return tmp;
     }
     
     @Override
-    public List<Celula> getVizinhosSuperiores(Celula<E> celula){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Celula[] getVizinhosSuperiores(Celula<E> celula){
+        Celula<E>[] tmp = new Celula[1];
+        tmp[0] = getCamadaSuperior().getCelula(celula.getX(), celula.getY());
+        return tmp;
     }
     
     @Override
-    public List<Celula> getVizinhosInferiores(Celula<E> celula){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Celula[] getVizinhosInferiores(Celula<E> celula){
+        Celula<E>[] tmp = new Celula[1];
+        tmp[0] = getCamadaInferior().getCelula(celula.getX(), celula.getY());
+        return tmp;
     }
 
     @Override
@@ -99,7 +111,6 @@ public abstract class CamadaAbstrata<E> implements Camada<E> {
     public void setZ(int z) {
         this.z = z;
     }
-    
-    
+       
     
 }

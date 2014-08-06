@@ -13,6 +13,8 @@ package br.edu.ifnmg.AutomatosCelulares.core;
 public abstract class CelulaAbstrata<E> implements Celula<E> {
 
     private int x, y, z;
+    
+    private E estado;
 
     @Override
     public int getX() {
@@ -39,6 +41,15 @@ public abstract class CelulaAbstrata<E> implements Celula<E> {
 
     public void setZ(int z) {
         this.z = z;
+    }
+
+    @Override
+    public E getEstado() {
+        return estado;
+    }
+
+    public void setEstado(E status) {
+        this.estado = status;
     }
     
     

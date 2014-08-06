@@ -20,8 +20,8 @@ public interface Camada<E> {
     public int getLargura();
     public int getComprimento();
     public Celula<E> getCelula(int x, int y);
-    public List<Celula<E>> getVizinhos(Celula<E> celula);
-    public List<Celula> getVizinhosSuperiores(Celula<E> celula);
-    public List<Celula> getVizinhosInferiores(Celula<E> celula);
+    public Celula<E>[] getVizinhos(Celula<E> celula);
+    public Celula[] getVizinhosSuperiores(Celula<E> celula);
+    public Celula[] getVizinhosInferiores(Celula<E> celula);
     public void atualiza();
 }

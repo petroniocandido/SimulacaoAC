@@ -22,11 +22,6 @@ public class CelulaSolo extends CelulaAbstrata<Long> {
     private double humidadeAtual;
     
     @Override
-    public Long getEstado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public void atualizarEstado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

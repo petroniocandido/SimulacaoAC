@@ -14,6 +14,10 @@ import br.edu.ifnmg.AutomatosCelulares.core.CamadaAbstrata;
  */
 public class Solo extends CamadaAbstrata<CelulaSolo> {
 
+    public Solo(int largura, int comprimento) {
+        super(largura, comprimento);
+    }
+
     @Override
     public void atualiza() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
