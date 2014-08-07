@@ -17,13 +17,37 @@ public class CelulaSolo extends CelulaAbstrata<Long> {
 
     private TipoSolo tipo;
     
-    private double altura;
-    
-    private double humidadeAtual;
-    
     @Override
     public void atualizarEstado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        // Calcula a qtd de água recebida por precipitação chuvosa (por unidade de área/tempo)
+        
+        Long precipitacao = (Long)getCamada().getVizinhosInferiores(this)[0].getEstadoAnterior();
+        estadoAtual += precipitacao;
+        
+        // Calcula a qtd de água perdida por evaporação (por unidade de área/tempo)
+        
+        Long evapotranspiracao = 0L;
+        
+        estadoAtual -= evapotranspiracao;
+        
+        // Calcula a qtd de água recebida por escorrimento dos terrenos vizinhos  (por unidade de área/tempo)
+        
+        for(Celula c : getCamada().getVizinhos(this)){
+            CelulaSolo tmp = (CelulaSolo)c;
+            if(tmp.getZ() > this.getZ()){
+                // O terreno vizinho é mais alto do que o atual
+                // O atual receberá enxurrada
+            }
+            if(tmp.getZ() == this.getZ()){
+                // O terreno vizinho é tem a mesma altura do que o atual
+                // O nível de umidade vai ser equalizaod
+            }
+            if(tmp.getZ() < this.getZ()){
+                // O terreno vizinho é mais baixo do que o atual
+                // O vizinho receberá enxurrada
+            }
+        }
     }
     
 }

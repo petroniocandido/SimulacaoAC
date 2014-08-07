@@ -1,9 +1,5 @@
 package br.edu.ifnmg.AutomatosCelulares.core;
 
-
-import br.edu.ifnmg.AutomatosCelulares.core.Camada;
-import java.util.List;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,21 +15,32 @@ public class AutomatoCelular {
 
     private int comprimento;
 
-    private int numeroCamadas;
+    private int quantidadeCamadas;
 
-    private List<Camada> camadas;
+    private Camada[] camadas;
 
-    public void avançarIteracao() {
+    public AutomatoCelular(int largura, int comprimento, int numeroCamadas) {
+        this.largura = largura;
+        this.comprimento = comprimento;
+        this.quantidadeCamadas = numeroCamadas;
+        this.camadas = new Camada[numeroCamadas];
+    }
+        
+
+    public void setCamada(int indice, Camada c){
+        camadas[indice] = c;
+        c.setZ(indice);
+    }
+    
+    public void avancarIteracao() {
         for (Camada c : camadas) {
             c.atualiza();
         }
     }
-
-    public void avançarIteracao(int i) {
+    
+    public void avancarIteracao(int i) {
         while (i > 0) {
-            for (Camada c : camadas) {
-                c.atualiza();
-            }
+            avancarIteracao();
             i--;
         }
     }
@@ -54,20 +61,14 @@ public class AutomatoCelular {
         this.comprimento = comprimento;
     }
 
-    public int getNumeroCamadas() {
-        return numeroCamadas;
+    public int getQuantidadeCamadas() {
+        return quantidadeCamadas;
     }
 
-    public void setNumeroCamadas(int numeroCamadas) {
-        this.numeroCamadas = numeroCamadas;
+    public void setQuantidadeCamadas(int quantidadeCamadas) {
+        this.quantidadeCamadas = quantidadeCamadas;
     }
 
-    public List<Camada> getCamadas() {
-        return camadas;
-    }
-
-    public void setCamadas(List<Camada> camadas) {
-        this.camadas = camadas;
-    }
+   
 
 }

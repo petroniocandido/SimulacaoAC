@@ -20,6 +20,10 @@ public class Simulacao extends AutomatoCelular {
     private Date resolucaoTemporal;
     
     private int resolucaoEspacial;
+
+    public Simulacao(int largura, int comprimento, int numeroCamadas) {
+        super(largura, comprimento, numeroCamadas);
+    }
     
     
 }

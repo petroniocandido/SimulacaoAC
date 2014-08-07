@@ -16,7 +16,7 @@ public class Atmosfera extends CamadaAbstrata<CelulaAtmosfera> {
 
     private DistribuicaoSazonal<Integer> temperatura;
     
-    private DistribuicaoEspacial<Integer> humidade;
+    private DistribuicaoEspacial<Integer> umidade;
     
     private Direcao direcaoVento;
     
@@ -25,11 +25,4 @@ public class Atmosfera extends CamadaAbstrata<CelulaAtmosfera> {
     public Atmosfera(int largura, int comprimento) {
         super(largura, comprimento);
     }
-    
-
-    @Override
-    public void atualiza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
