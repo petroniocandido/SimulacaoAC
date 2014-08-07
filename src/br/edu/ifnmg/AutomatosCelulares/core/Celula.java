@@ -14,6 +14,7 @@ public interface Celula<E> {
     public int getX();
     public int getY();
     public int getZ();
-    public E getEstado();
+    public E getEstadoAnterior();
+    public E getEstadoAtual();
     public void atualizarEstado();    
 }

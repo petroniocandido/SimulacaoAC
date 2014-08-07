@@ -6,7 +6,6 @@
 
 package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 
-import br.edu.ifnmg.AutomatosCelulares.core.Celula;
 import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
 
 /**

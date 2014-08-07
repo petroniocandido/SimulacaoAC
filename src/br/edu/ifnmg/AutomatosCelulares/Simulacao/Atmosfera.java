@@ -17,6 +17,10 @@ public class Atmosfera extends CamadaAbstrata<CelulaAtmosfera> {
     private DistribuicaoSazonal<Integer> temperatura;
     
     private DistribuicaoEspacial<Integer> humidade;
+    
+    private Direcao direcaoVento;
+    
+    private int velocidadeVento;
 
     public Atmosfera(int largura, int comprimento) {
         super(largura, comprimento);

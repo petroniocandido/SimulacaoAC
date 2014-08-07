@@ -14,7 +14,9 @@ public abstract class CelulaAbstrata<E> implements Celula<E> {
 
     private int x, y, z;
     
-    private E estado;
+    private E estadoAnterior;
+    
+    private E estadoAtual;
 
     @Override
     public int getX() {
@@ -44,14 +46,20 @@ public abstract class CelulaAbstrata<E> implements Celula<E> {
     }
 
     @Override
-    public E getEstado() {
-        return estado;
+    public E getEstadoAtual() {
+        return estadoAtual;
     }
 
     public void setEstado(E status) {
-        this.estado = status;
+        this.estadoAtual = status;
     }
-    
-    
+
+    public E getEstadoAnterior() {
+        return estadoAnterior;
+    }
+
+    public void setEstadoAnterior(E estadoAnterior) {
+        this.estadoAnterior = estadoAnterior;
+    }
     
 }
