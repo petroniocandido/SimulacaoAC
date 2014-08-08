@@ -9,17 +9,29 @@ package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 import br.edu.ifnmg.AutomatosCelulares.core.CamadaAbstrata;
 
 /**
- *
+ * 
  * @author petronio
  */
 public class Atmosfera extends CamadaAbstrata<CelulaAtmosfera> {
 
+    /**
+     * Representa a temperatura média por época do ano
+     */
     private DistribuicaoSazonal<Integer> temperatura;
     
+    /**
+     * Representa a umidade média por época do ano
+     */
     private DistribuicaoEspacial<Integer> umidade;
     
+    /**
+     * Direção atual do vento
+     */
     private Direcao direcaoVento;
     
+    /**
+     * Velocidade do vento
+     */
     private int velocidadeVento;
 
     public Atmosfera(int largura, int comprimento) {

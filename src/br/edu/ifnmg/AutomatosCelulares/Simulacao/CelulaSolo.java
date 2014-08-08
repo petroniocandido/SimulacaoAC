@@ -10,7 +10,7 @@ import br.edu.ifnmg.AutomatosCelulares.core.Celula;
 import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
 
 /**
- *
+ * O estado desse tipo de célula representa a quantidade de umidade contida no solo
  * @author petronio
  */
 public class CelulaSolo extends CelulaAbstrata<Long> {

@@ -9,16 +9,17 @@ package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
 
 /**
- *
+ * O estado desse tipo de célula representa a quantidade de água precipitada ao solo
  * @author petronio
  */
 public class CelulaAtmosfera  extends CelulaAbstrata<Long> {
 
-    private double humidadeAtual;
+    private double umidadeAtual;
     
     @Override
     public void atualizarEstado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // Formula que dê a qtde de água precipitada a partir da umidade relativa do ar, temperatura, etc...
+        
     }
     
 }
