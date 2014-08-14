@@ -6,6 +6,7 @@
 
 package br.edu.ifnmg.AutomatosCelulares.Simulacao;
 
+import br.edu.ifnmg.AutomatosCelulares.core.Camada;
 import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
 
 /**
@@ -14,7 +15,9 @@ import br.edu.ifnmg.AutomatosCelulares.core.CelulaAbstrata;
  */
 public class CelulaAtmosfera  extends CelulaAbstrata<Long> {
 
-    private double umidadeAtual;
+    public CelulaAtmosfera(int x, int y, int z, Long estadoAtual, Camada<Long> camada) {
+        super(x, y, z, estadoAtual, camada);
+    }
     
     @Override
     public void atualizarEstado() {

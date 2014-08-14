@@ -20,6 +20,16 @@ public abstract class CelulaAbstrata<E> implements Celula<E> {
     
     private Camada<E> camada;
 
+    public CelulaAbstrata(int x, int y, int z, E estadoAtual, Camada<E> camada) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.estadoAtual = estadoAtual;
+        this.camada = camada;
+    }
+    
+    
+
     @Override
     public int getX() {
         return x;
